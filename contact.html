@@ -6,9 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Get in touch with Lydia Chen." />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet" />
 </head>
 
-<body class="has-video-bg">
+<body class="has-video-bg game-theme">
   <video class="page-bg-video" autoplay muted loop playsinline>
     <source src="media/secondarybg.mp4" type="video/mp4" />
   </video>
@@ -28,8 +31,19 @@
     <a href="contact.html" class="active" data-pill>Contact</a>
   </nav>
 
+  <div class="exp-hud" aria-hidden="true">
+    <div class="exp-hud__brand">Lydia Chen</div>
+    <div class="exp-hud__stats">
+      <span class="exp-hud__chip">LV 07</span>
+      <span class="exp-hud__chip">XP 7420</span>
+      <span class="exp-hud__chip">CORE: Outreach</span>
+    </div>
+  </div>
+
+  <div class="exp-scanlines" aria-hidden="true"></div>
+
   <div class="scroller">
-    <section class="panel intro">
+    <section class="panel intro intro--contact">
       <div>
         <h1 class="script-title script-title--single" aria-label="Contact">
           <span class="script-fallback">Contact</span>
@@ -37,14 +51,32 @@
             <text class="script-line" x="0" y="90">Contact</text>
           </svg>
         </h1>
-      </div>
-      <div class="contact-icons" aria-label="Contact icons">
-        <a href="https://www.linkedin.com/in/aeroia/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <img src="media/icon1.png" alt="LinkedIn icon" />
-        </a>
-        <a href="https://www.instagram.com/antartino/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          <img src="media/icon2.png" alt="Instagram icon" />
-        </a>
+        <div class="contact-icons" aria-label="Contact icons">
+          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <img src="media/icon1.png" alt="GitHub icon" />
+          </a>
+          <a href="https://www.instagram.com/antartino/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <img src="media/icon2.png" alt="Instagram icon" />
+          </a>
+        </div>
+        <form class="contact-form" id="contactForm" aria-label="Contact form">
+          <div class="contact-form__head">
+            <span class="contact-form__tag">Message Console</span>
+            <span class="contact-form__status">STATUS: READY</span>
+          </div>
+          <label class="contact-form__field">
+            <span class="contact-form__label">Subject</span>
+            <input type="text" name="subject" placeholder="Enter a title..." required />
+          </label>
+          <label class="contact-form__field">
+            <span class="contact-form__label">Message</span>
+            <textarea name="body" rows="6" placeholder="Write your message..." required></textarea>
+          </label>
+          <div class="contact-form__actions">
+            <button type="submit" class="contact-form__button">Send Transmission</button>
+            <span class="contact-form__note">To: lydxchu@gmail.com</span>
+          </div>
+        </form>
       </div>
     </section>
     

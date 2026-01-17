@@ -6,9 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Selected works by Lydia Chen." />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet" />
 </head>
 
-<body class="works-page has-video-bg">
+<body class="works-page has-video-bg game-theme">
   <video class="page-bg-video" autoplay muted loop playsinline>
     <source src="media/secondarybg.mp4" type="video/mp4" />
   </video>
@@ -30,26 +33,19 @@
     <a href="contact.html" data-pill>Contact</a>
   </nav>
 
+  <div class="exp-hud" aria-hidden="true">
+    <div class="exp-hud__brand">Lydia Chen</div>
+    <div class="exp-hud__stats">
+      <span class="exp-hud__chip">LV 07</span>
+      <span class="exp-hud__chip">XP 7420</span>
+      <span class="exp-hud__chip">CORE: Outreach</span>
+    </div>
+  </div>
+
+  <div class="exp-scanlines" aria-hidden="true"></div>
+
   <!-- Page -->
   <div class="scroller">
-    <!-- HERO -->
-    <section class="panel intro intro-hero">
-      <div>
-        <h1 class="script-title" aria-label="Selected Works">
-          <span class="script-fallback">Selected Works</span>
-          <svg class="script-svg" viewBox="0 0 800 220" aria-hidden="true">
-            <text class="script-line" x="0" y="90">Selected</text>
-            <text class="script-line" x="0" y="190">Works</text>
-          </svg>
-        </h1>
-      </div>
-      <div>
-        <p class="reveal-text works-intro-note" data-reveal="words">
-          Artworks I have made throughout the years. Scroll to continue.
-        </p>
-      </div>
-    </section>
-
     <!-- WORKS (HORIZONTAL) -->
     <section class="panel works-panel" id="worksPanel">
       <header class="works-head">
@@ -66,11 +62,11 @@
         <!-- ====== IMAGES ====== -->
         <article class="work-tile"
           data-type="image"
-          data-src="artworks/5.jpg"
+          data-src="media/img5.png"
           data-title="Artwork"
           data-year="2024"
           data-desc="A short description goes here.">
-          <img src="artworks/5.jpg" alt="Artwork — 2024" loading="lazy" />
+          <img src="media/img5.png" alt="Artwork — 2024" loading="lazy" />
         </article>
 
         <article class="work-tile"
@@ -256,29 +252,29 @@
         <!-- ====== OLDER WORKS + OC LINK ====== -->
         <article class="work-tile"
           data-type="image"
-          data-src="artworks/3.jpeg"
+          data-src="media/img3.png"
           data-title="Artwork"
           data-year="2023"
           data-desc="Short description.">
-          <img src="artworks/3.jpeg" alt="Artwork — 2023" loading="lazy" />
+          <img src="media/img3.png" alt="Artwork — 2023" loading="lazy" />
         </article>
 
         <article class="work-tile"
           data-type="image"
-          data-src="artworks/1.jpeg"
+          data-src="media/img1.jpg"
           data-title="Artwork"
           data-year="2023"
           data-desc="Short description.">
-          <img src="artworks/1.jpeg" alt="Artwork — 2023" loading="lazy" />
+          <img src="media/img1.jpg" alt="Artwork — 2023" loading="lazy" />
         </article>
 
         <article class="work-tile"
           data-type="image"
-          data-src="artworks/4.jpg"
+          data-src="media/img4.png"
           data-title="Artwork"
           data-year="2023"
           data-desc="Short description.">
-          <img src="artworks/4.jpg" alt="Artwork — 2023" loading="lazy" />
+          <img src="media/img4.png" alt="Artwork — 2023" loading="lazy" />
         </article>
 
         <article class="work-tile"

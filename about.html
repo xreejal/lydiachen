@@ -6,9 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Learn more about Lydia Chen." />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet" />
 </head>
 
-<body class="has-video-bg">
+<body class="has-video-bg game-theme">
   <video class="page-bg-video" autoplay muted loop playsinline>
     <source src="media/secondarybg.mp4" type="video/mp4" />
   </video>
@@ -28,8 +31,19 @@
     <a href="contact.html" data-pill>Contact</a>
   </nav>
 
+  <div class="exp-hud" aria-hidden="true">
+    <div class="exp-hud__brand">Lydia Chen</div>
+    <div class="exp-hud__stats">
+      <span class="exp-hud__chip">LV 07</span>
+      <span class="exp-hud__chip">XP 7420</span>
+      <span class="exp-hud__chip">CORE: Outreach</span>
+    </div>
+  </div>
+
+  <div class="exp-scanlines" aria-hidden="true"></div>
+
   <div class="scroller">
-    <section class="panel intro">
+    <section class="panel intro intro--about">
       <div>
         <h1 class="script-title script-title--single" aria-label="About">
           <span class="script-fallback">About</span>
@@ -37,11 +51,28 @@
             <text class="script-line" x="0" y="90">About</text>
           </svg>
         </h1>
-      </div>
-      <div>
-        <p class="reveal-text works-intro-note" data-reveal="words">
-          Digital artist exploring emotion through image and motion.
-        </p>
+        <div class="about-card about-card--inline">
+          <div class="about-card__header">Player Profile</div>
+          <div class="about-card__rows">
+            <div class="about-row">
+              <span class="about-label">Player</span>
+              <span class="about-value">Lydia (Xinyi) Chen</span>
+            </div>
+            <div class="about-row">
+              <span class="about-label">Class</span>
+              <span class="about-value">Hybrid (Media + Creative Strategy)</span>
+            </div>
+            <div class="about-row">
+              <span class="about-label">Skills</span>
+              <span class="about-value">Illustration, animation, digital art, fashion design, storytelling</span>
+            </div>
+            <div class="about-row">
+              <span class="about-label">Current quest</span>
+              <span class="about-value">Studying AD/PR at UNC Chapel Hill</span>
+            </div>
+          </div>
+          <p class="about-quote">“Rules are more interesting when you know how to bend them!”</p>
+        </div>
       </div>
     </section>
   </div>

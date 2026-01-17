@@ -6,9 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="View the complete collection of artworks by Lydia Chen." />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet" />
 </head>
 
-<body>
+<body class="game-theme">
   <!-- Background blobs -->
   <div class="blobs" aria-hidden="true">
     <span class="blob b1"></span>
@@ -27,6 +30,17 @@
     <a href="contact.html" data-pill>Contact</a>
   </nav>
 
+  <div class="exp-hud" aria-hidden="true">
+    <div class="exp-hud__brand">Lydia Chen</div>
+    <div class="exp-hud__stats">
+      <span class="exp-hud__chip">LV 07</span>
+      <span class="exp-hud__chip">XP 7420</span>
+      <span class="exp-hud__chip">CORE: Outreach</span>
+    </div>
+  </div>
+
+  <div class="exp-scanlines" aria-hidden="true"></div>
+
   <!-- Vertical page -->
   <main class="page">
     <!-- HERO -->
@@ -39,11 +53,6 @@
             <text class="script-line" x="0" y="190">Works</text>
           </svg>
         </h1>
-      </div>
-      <div>
-        <p class="reveal-text works-intro-note" data-reveal="words">
-          Digital illustrations and experiments exploring emotion, motion, and atmosphere.
-        </p>
       </div>
     </section>
 

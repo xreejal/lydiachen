@@ -6,9 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Experience and roles." />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet" />
 </head>
 
-<body class="has-video-bg experience-page">
+<body class="has-video-bg experience-page game-theme">
   <video class="page-bg-video" autoplay muted loop playsinline>
     <source src="media/secondarybg.mp4" type="video/mp4" />
   </video>
@@ -30,100 +33,195 @@
     <a href="contact.html" data-pill>Contact</a>
   </nav>
 
+  <div class="exp-hud" aria-hidden="true">
+    <div class="exp-hud__brand">Lydia Chen</div>
+    <div class="exp-hud__stats">
+      <span class="exp-hud__chip">LV 07</span>
+      <span class="exp-hud__chip">XP 7420</span>
+      <span class="exp-hud__chip">CORE: Outreach</span>
+    </div>
+  </div>
+
+  <div class="exp-scanlines" aria-hidden="true"></div>
+
   <div class="scroller">
-    <!-- HERO -->
-    <section class="panel intro">
-      <div>
-        <h1 class="script-title script-title--single" aria-label="Experience">
-          <span class="script-fallback">Experience</span>
-          <svg class="script-svg" viewBox="0 0 800 120" aria-hidden="true">
-            <text class="script-line" x="0" y="90">Experience</text>
-          </svg>
-        </h1>
-      </div>
-      <div>
-        <p class="reveal-text works-intro-note" data-reveal="words">
-          Roles, projects, and collaborations — revealed as you scroll.
-        </p>
+    <!-- EXPERIENCE + LEADERSHIP -->
+    <section class="panel exp-panel" aria-label="Experience and Leadership">
+      <div class="exp-stack">
+        <header class="exp-section-header">
+          <div class="exp-kicker">Experience and Leadership</div>
+          <h2 class="exp-title">Campus roles and professional internships</h2>
+        </header>
+
+        <article class="exp-left exp-item exp-card">
+          <div class="exp-media">
+            <div class="exp-media-label">Coulture Magazine</div>
+            <span class="exp-pill">Sep 2025 — Present</span>
+            <div class="exp-status">Questline: Growth</div>
+          </div>
+          <div class="exp-text">
+            <div class="exp-kicker reveal-text" data-reveal="words">Outreach Director</div>
+            <p class="exp-desc reveal-text" data-reveal="words">
+              Lead outreach and partnerships for a student-run fashion and lifestyle publication, shaping how
+              the brand connects with campus audiences. Plan events and campaigns that translate creative
+              storytelling into measurable visibility and engagement.
+            </p>
+            <ul class="exp-badges" aria-label="Achievements">
+              <li>Campus Partnerships</li>
+              <li>Event Campaigns</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="exp-right exp-item exp-card">
+          <div class="exp-media">
+            <div class="exp-media-label">Chapel Thrill Escapes</div>
+            <span class="exp-pill">Sep 2025 — Present</span>
+            <div class="exp-status">Role: Builder</div>
+          </div>
+          <div class="exp-text">
+            <div class="exp-kicker reveal-text" data-reveal="words">Marketing Team Member</div>
+            <p class="exp-desc reveal-text" data-reveal="words">
+              Design promotional content and visual assets that support student-focused brand campaigns.
+              Collaborate on concepts and execute in-person and digital promotions, including logos and
+              merchandise used across platforms and live events.
+            </p>
+            <ul class="exp-badges" aria-label="Achievements">
+              <li>Visual Assets</li>
+              <li>Merch Design</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="exp-left exp-item exp-card">
+          <div class="exp-media">
+            <div class="exp-media-label">Heelprint Communications</div>
+            <span class="exp-pill">Jan 2026 — Present</span>
+            <div class="exp-status">Faction: Outreach</div>
+          </div>
+          <div class="exp-text">
+            <div class="exp-kicker reveal-text" data-reveal="words">Internal Outreach Team Member</div>
+            <p class="exp-desc reveal-text" data-reveal="words">
+              Support internal outreach and recruitment for a student-run communications agency by creating
+              consistent campus messaging. Partner with leadership to improve engagement and increase
+              participation across teams.
+            </p>
+            <ul class="exp-badges" aria-label="Achievements">
+              <li>Recruitment</li>
+              <li>Engagement</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="exp-right exp-item exp-card">
+          <div class="exp-media">
+            <div class="exp-media-label">Students Demand Action</div>
+            <span class="exp-pill">Sep 2025 — Present</span>
+            <div class="exp-status">Campaign: Advocacy</div>
+          </div>
+          <div class="exp-text">
+            <div class="exp-kicker reveal-text" data-reveal="words">Social Media Director</div>
+            <p class="exp-desc reveal-text" data-reveal="words">
+              Lead digital strategy and social media planning to drive engagement for advocacy campaigns.
+              Promote events through coordinated outreach and translate complex policy issues into clear,
+              student-centered storytelling.
+            </p>
+            <ul class="exp-badges" aria-label="Achievements">
+              <li>Digital Strategy</li>
+              <li>Storytelling</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="exp-left exp-item exp-card">
+          <div class="exp-media">
+            <div class="exp-media-label">ITS Service Desk</div>
+            <span class="exp-pill">Apr 2025 — Present</span>
+            <div class="exp-status">Role: Support</div>
+          </div>
+          <div class="exp-text">
+            <div class="exp-kicker reveal-text" data-reveal="words">Customer Experience Specialist</div>
+            <p class="exp-desc reveal-text" data-reveal="words">
+              Provide high-volume technical support for students, faculty, and staff across Windows, macOS,
+              and Microsoft Office workflows. Document recurring issues to improve service efficiency and
+              strengthen cross-team communication.
+            </p>
+            <ul class="exp-badges" aria-label="Achievements">
+              <li>Systems Support</li>
+              <li>Workflow Fixes</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="exp-right exp-item exp-card">
+          <div class="exp-media">
+            <div class="exp-media-label">Sinovoice</div>
+            <span class="exp-pill">Jun 2024 — Aug 2024</span>
+            <div class="exp-status">Quest: Internship</div>
+          </div>
+          <div class="exp-text">
+            <div class="exp-kicker reveal-text" data-reveal="words">Product Manager Intern</div>
+            <p class="exp-desc reveal-text" data-reveal="words">
+              Built interactive prototypes and product documentation with cross-functional teams to speed
+              alignment. Conducted user research and testing to refine onboarding, translating insights into
+              actionable product improvements.
+            </p>
+            <ul class="exp-badges" aria-label="Achievements">
+              <li>User Research</li>
+              <li>Prototyping</li>
+            </ul>
+          </div>
+        </article>
       </div>
     </section>
 
-    <!-- EXPERIENCE LIST -->
-    <section class="panel exp-panel" aria-label="Experience list">
+    <!-- CREATIVE + COMMUNITY -->
+    <section class="panel exp-panel" aria-label="Creative and Community">
       <div class="exp-stack">
+        <header class="exp-section-header">
+          <div class="exp-kicker">Creative and Community</div>
+          <h2 class="exp-title">Design, production, and campus outreach</h2>
+        </header>
 
-        <!-- ITEM 1 (media left, text right) -->
-        <article class="exp-left exp-item">
-          <div class="exp-media exp-glass">
-            <!-- swap for your own image -->
-            <img src="media/exp1.jpg" alt="Centible — product design preview" loading="lazy" />
-            <span class="exp-pill">2025</span>
+        <article class="exp-left exp-item exp-card">
+          <div class="exp-media">
+            <div class="exp-media-label">Art and the Brain</div>
+            <span class="exp-pill">Jan 2025 — Present</span>
+            <div class="exp-status">Guild: Creative</div>
           </div>
-
           <div class="exp-text">
-            <div class="exp-kicker reveal-text" data-reveal="words">Product Design</div>
-            <h2 class="exp-title">Filtering transactions for Centible</h2>
+            <div class="exp-kicker reveal-text" data-reveal="words">Fashion Designer & Stylist</div>
             <p class="exp-desc reveal-text" data-reveal="words">
-              A financial management tool for college students navigating independent living — focused on
-              clarity, confidence, and intuitive organization.
+              Designed and styled garments for Threads of the Mind, translating neurological themes into
+              wearable storytelling. Lead integrated communications for the 2026 fashion show, coordinating
+              creators and timelines to meet production deadlines.
             </p>
-
-            <div class="exp-actions">
-              <a class="exp-link reveal-text" data-reveal="words" href="#" aria-label="View case study">
-                View case study <span aria-hidden="true">↗</span>
-              </a>
-            </div>
+            <ul class="exp-badges" aria-label="Achievements">
+              <li>Creative Direction</li>
+              <li>Show Production</li>
+            </ul>
           </div>
         </article>
 
-        <!-- ITEM 2 (media right, text left) -->
-        <article class="exp-right exp-item">
-          <div class="exp-media exp-glass">
-            <img src="media/exp2.jpg" alt="Illustration role preview" loading="lazy" />
-            <span class="exp-pill">2024</span>
+        <article class="exp-right exp-item exp-card">
+          <div class="exp-media">
+            <div class="exp-media-label">BeAM Makerspace</div>
+            <span class="exp-pill">Feb 2025 — Dec 2025</span>
+            <div class="exp-status">Role: Maker</div>
           </div>
-
           <div class="exp-text">
-            <div class="exp-kicker reveal-text" data-reveal="words">Illustration</div>
-            <h2 class="exp-title">Visual storytelling & atmosphere studies</h2>
+            <div class="exp-kicker reveal-text" data-reveal="words">Program Assistant</div>
             <p class="exp-desc reveal-text" data-reveal="words">
-              A series of digital studies exploring lighting, mood, and composition — built into a repeatable
-              workflow for consistent output.
+              Train users on creative production tools including Adobe Illustrator, laser cutting, and 3D
+              printing while supporting outreach initiatives. Assist with workshops and events that encourage
+              hands-on learning and campus partnerships.
             </p>
-
-            <div class="exp-actions">
-              <a class="exp-link reveal-text" data-reveal="words" href="works.html">
-                Related works <span aria-hidden="true">↗</span>
-              </a>
-            </div>
+            <ul class="exp-badges" aria-label="Achievements">
+              <li>Workshops</li>
+              <li>Fabrication</li>
+            </ul>
           </div>
         </article>
-
-        <!-- ITEM 3 -->
-        <article class="exp-left exp-item">
-          <div class="exp-media exp-glass">
-            <video muted playsinline preload="metadata" poster="media/exp3_poster.jpg">
-              <source src="media/exp3.mp4" type="video/mp4" />
-            </video>
-            <span class="exp-pill">2023</span>
-          </div>
-
-          <div class="exp-text">
-            <div class="exp-kicker reveal-text" data-reveal="words">Motion</div>
-            <h2 class="exp-title">Flip animation & short-form experiments</h2>
-            <p class="exp-desc reveal-text" data-reveal="words">
-              First pass at flip animation: timing, arcs, and rhythm — optimized for small loops and shareable
-              formats.
-            </p>
-
-            <div class="exp-actions">
-              <a class="exp-link reveal-text" data-reveal="words" href="#" aria-label="Watch">
-                Watch <span aria-hidden="true">↗</span>
-              </a>
-            </div>
-          </div>
-        </article>
-
       </div>
     </section>
   </div>

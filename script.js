@@ -75,6 +75,53 @@
     });
   }
 
+  // scroll hint (only when more content exists)
+  const scrollHint = document.createElement("div");
+  scrollHint.className = "scroll-hint";
+  scrollHint.innerHTML = '<span>Scroll to Continue</span><span class="scroll-hint__arrow">▼▼</span>';
+  document.body.appendChild(scrollHint);
+
+  function updateScrollHint() {
+    const doc = document.documentElement;
+    const canScroll = doc.scrollHeight > window.innerHeight + 20;
+    const nearBottom = window.scrollY + window.innerHeight >= doc.scrollHeight - 10;
+    if (canScroll && !nearBottom) {
+      scrollHint.classList.add("is-visible");
+    } else {
+      scrollHint.classList.remove("is-visible");
+    }
+  }
+
+  window.addEventListener("load", updateScrollHint);
+  window.addEventListener("resize", updateScrollHint);
+  window.addEventListener("scroll", updateScrollHint, { passive: true });
+
+  // intro grid parallax (game theme)
+  const introPanels = document.querySelectorAll(".game-theme .intro");
+  introPanels.forEach((panel) => {
+    const box = panel.querySelector(".intro > div");
+    if (!box) return;
+    panel.addEventListener("mousemove", (e) => {
+      const r = panel.getBoundingClientRect();
+      const dx = (e.clientX - (r.left + r.width / 2)) / r.width;
+      const dy = (e.clientY - (r.top + r.height / 2)) / r.height;
+      const dist = Math.min(1, Math.sqrt(dx * dx + dy * dy));
+      const glow = 0.08 + (1 - dist) * 0.12;
+
+      box.style.setProperty("--grid-x", `${dx * 24}px`);
+      box.style.setProperty("--grid-y", `${dy * 24}px`);
+      box.style.setProperty("--grid-glow", glow.toFixed(3));
+      box.style.setProperty("--grid-glow-weak", (glow * 0.7).toFixed(3));
+    });
+
+    panel.addEventListener("mouseleave", () => {
+      box.style.setProperty("--grid-x", "0px");
+      box.style.setProperty("--grid-y", "0px");
+      box.style.setProperty("--grid-glow", "0.12");
+      box.style.setProperty("--grid-glow-weak", "0.08");
+    });
+  });
+
   // -----------------------------
   // Reveal text (words)
   // -----------------------------
@@ -178,9 +225,9 @@
     let raf = null;
 
     // Tuning (feel free to tweak)
-    const WHEEL_BOOST = 0.4;     // scroll strength
-    const DRAG_BOOST = .8;      // drag strength
-    const FRICTION = .8;        // closer to 1 = longer glide
+    const WHEEL_BOOST = 0.25;     // scroll strength
+    const DRAG_BOOST = .7;      // drag strength
+    const FRICTION = .92;        // closer to 1 = longer glide
     const STOP_EPS = 0.003;       // stop tiny jitter
 
     function loopWidth() {
@@ -283,6 +330,19 @@
   const modalTitle = document.getElementById("modalTitle");
   const modalYear = document.getElementById("modalYear");
   const modalDesc = document.getElementById("modalDesc");
+
+  // Contact form -> mailto
+  const contactForm = document.getElementById("contactForm");
+  if (contactForm) {
+    contactForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const formData = new FormData(contactForm);
+      const subject = (formData.get("subject") || "").toString();
+      const body = (formData.get("body") || "").toString();
+      const mailto = `mailto:lydxchu@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailto;
+    });
+  }
 
   function openModal({ type, src, title, year, desc }) {
     if (!modal) return;
